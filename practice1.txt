@@ -1,0 +1,48 @@
+1.  Write a JavaScript function to generate an array between two integers of 1 step length.
+
+
+function limit(min,max)//function to generate array between two integers
+{
+            
+            var array = new Array(max-min+1);   //declaring an array
+             
+             for (var i = 0; i < array.length; i++)   // incrementing and printing the result in the created array
+             {
+            
+                array[i] = min;
+                min++;                 //incrementing the value of min for next iteration
+             }
+              return array;
+}
+console.log(limit(-4,7));//printing values b/w given numbers 
+console.log(limit(3,7));
+
+Output:
+[ -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7 ]
+[ 3, 4, 5, 6, 7 ]
+
+2.Write a JavaScript program to find the most frequent item of an array.
+
+
+var arr1=[3, 'q', 'q', 'q', 2, 3, 'q', 3, 'q', 2, 4, 9, 3];
+var count = 1,a=0,ele;
+
+for (var i=0; i<arr1.length; i++)// takes every ele one by one and check for the repeating element 
+{
+        for (var j=i; j<arr1.length; j++) //takes one element from i at a time and traverse  the whole array n compares it
+        {
+                if (arr1[i] == arr1[j])
+                 a++;
+                if (count<a)
+                {
+                  count=a; 
+                  ele = arr1[i];//repeated element is stored in ele
+                }
+        }
+        a=0;
+}
+console.log(ele+" ( " +count +" times ) ") ;
+
+
+Output:
+q ( 5 times ) 
